@@ -1,0 +1,39 @@
+--CREATE DATABASE TripPlanner;
+
+--USE TripPlanner;
+
+--CREATE TABLE [User](
+--[Address] NVARCHAR(50) PRIMARY KEY,
+--[Name] NVARCHAR (30) NOT NULL,
+--[DOB] DATE NOT NULL,
+--[Phone] NCHAR (10)
+--)
+
+--CREATE TABLE Passport(
+--[AddressOnPass] NVARCHAR (50) PRIMARY KEY,
+--[PassportNo] INT NOT NULL,
+--[ExpirationDate] DATE NOT NULL,
+--[UserAddress] NVARCHAR(50) FOREIGN KEY REFERENCES [User]([Address])
+--)
+
+--CREATE TABLE Trip(
+--Budget INT PRIMARY KEY,
+--StartingDest NVARCHAR(30) NOT NULL,
+--EndingDest NVARCHAR(30) NOT NULL,
+--StartDate DATE NOT NULL,
+--EndDate DATE NOT NULL,
+--[UserAddress] NVARCHAR(50) FOREIGN KEY REFERENCES [User]([Address])
+--)
+
+--CREATE TABLE Hotel(
+--[Address] NVARCHAR(50) PRIMARY KEY,
+--CheckIn DATE NOT NULL,
+--CheckOut DATE NOT NULL,
+--CostPerNight INT,
+--[Phone] NCHAR (10)
+--)
+
+--CREATE TABLE Booking(
+--HotelAddress NVARCHAR(50) FOREIGN KEY REFERENCES Hotel([Address]),
+--[UserAddress] NVARCHAR(50) FOREIGN KEY REFERENCES [User]([Address])
+--)
